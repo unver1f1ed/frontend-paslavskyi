@@ -1,31 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sable</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Practice</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
+  <body>
+    <header class="main-header">
+      <div class="navbar content-wrap d-flex">
+        <nav class="vertical-center d-flex">
+          <div class="logo d-flex">
+            <img src="assets/images/logo.svg" alt="Sable main logo" />
+          </div>
 
-<body>
-    <header>
-        <h1>Мій вебпроєкт</h1>
+          <ul id="mainMenu" class="main-menu d-flex">
+            <li><a href="#" class="uppercase has-dropdown">Credit</a></li>
+            <li><a href="#" class="uppercase">Debit</a></li>
+            <li><a href="#" class="uppercase">App</a></li>
+            <li><a href="#" class="uppercase has-dropdown">Learn</a></li>
+          </ul>
+
+          <div class="nav-actions d-flex vertical-center">
+            <div id="iconBlock" class="menu-icon">
+              <div id="iconOpen" class="menu-icon-open">
+                <i class="fa-solid fa-bars"></i>
+              </div>
+              <div id="iconClose" class="menu-icon-close d-none">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </div>
+
+            <button id="loginBtn" class="btn btn_login">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i>
+              <span class="login-text">Login</span>
+            </button>
+          </div>
+        </nav>
+      </div>
     </header>
-    <main>
-        <section>
-            <h2>Головна секція</h2>
-            <p>
-                Це перша сторінка навчального вебпроєкту.
-            </p>
-        </section>
-    </main>
-    <footer>
-        <p>
-            © 2026 Навчальна практика
-        </p>
-    </footer>
-    <script src="assets/js/script.js"></script>
-</body>
 
+    <main>
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            The fastest, most<br class="desktop-only" />
+            premium path to<br class="desktop-only" />
+            <strong>financial freedom</strong>
+          </h1>
+
+          <a href="#" class="btn btn_explore">Explore</a>
+        </div>
+
+        <div class="fdic-disclaimer d-flex vertical-center">
+          <img src="assets/images/fdic-logo.svg" alt="FDIC" class="fdic-logo" />
+          <p>
+            Banking services provided by Coastal Community Bank, Member<br />
+            FDIC, pursuant to license by Mastercard International Inc.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
