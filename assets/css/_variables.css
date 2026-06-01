@@ -1,0 +1,12 @@
+:root {
+  --content-width: 76.5rem;
+  --content-height: 100dvh;
+  --main-bg-color: #000000;
+  --light-color: #ffffff;
+  --nav-link-color: rgba(255, 255, 255, 0.64);
+
+  --btn-login-bg: #ffffff;
+  --btn-login-text: #000000;
+
+  --main-font: "Inter", sans-serif;
+}

@@ -1,14 +1,421 @@
+@import url("_variables.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* -------- Базове скидання -------- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html,
 body {
-    font-family: Arial, sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--main-font);
+  background-color: var(--main-bg-color);
+  color: var(--light-color);
 }
 
 img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* -------- Допоміжні класи -------- */
+.d-none {
+  display: none !important;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.item-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical-center {
+  align-items: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.content-wrap {
+  max-width: var(--content-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  /* 20px */
+}
+
+.desktop-only {
+  display: none;
+}
+
+/* -------- Header -------- */
+.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar {
+  height: 5rem;
+  /* ще подумаю */
+}
+
+.navbar nav {
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+  height: 100%;
+}
+
+/* Мобільне меню */
+.main-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100dvh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-bg-color);
+  gap: 5.5rem;
+  transition: right 0.4s ease-in-out;
+  z-index: 10;
+}
+
+.main-menu.active {
+  right: 0;
+}
+
+.main-menu a {
+  color: var(--nav-link-color);
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.1875rem;
+  /* 19px */
+  letter-spacing: 0.0135rem;
+  /* 0.22px */
+}
+
+/* -------- Стилі для випадаючого меню (крапочки) -------- */
+.main-menu a.has-dropdown {
+  position: relative;
+  /* Щоб крапочка позиціонувалася відносно тексту */
+  display: inline-flex;
+  align-items: center;
+}
+
+.main-menu a.has-dropdown::after {
+  content: "";
+  position: absolute;
+  right: -0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: rgba(31, 198, 187, 0.64);
+  /* #1FC6BB 64% */
+  border-radius: 50%;
+}
+
+.main-menu a:hover {
+  color: var(--light-color);
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  /* 24px */
+  cursor: pointer;
+  z-index: 20;
+  color: var(--light-color);
+}
+
+/* Кнопка входу */
+.nav-actions {
+  gap: 1.25rem;
+  /* Відстань між бургером та іконкою логіну */
+  z-index: 20;
+  /* Мають бути поверх мобільного меню */
+}
+
+/* Мобільна кнопка входу (виглядає як іконка) */
+.btn_login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  /* Прозорий фон на мобілці */
+  color: var(--light-color);
+  /* Білий колір іконки */
+  border: none;
+  font-size: 1.5rem;
+  /* Розмір такий самий, як у бургера */
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn_login:hover {
+  opacity: 0.85;
+}
+
+/* Ховаємо текст на мобільному */
+.login-text {
+  display: none;
+}
+
+/* -------- Hero Section -------- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  background-image: url("../images/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 1.25rem 2rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-title {
+  color: var(--light-color);
+  font-weight: 400;
+  /* Гумовий шрифт для мобілок, щоб текст не вилазив за екран */
+  font-size: clamp(2rem, 8vw, 3.737rem);
+  line-height: 1.2;
+  letter-spacing: 0.05rem;
+  margin-bottom: 2rem;
+  width: 100%; 
+  word-wrap: break-word;
+}
+
+.hero-title strong {
+  font-weight: 700;
+}
+
+.btn_explore {
+  background-color: #6fdbd4;
+  /* Колір з Фігми */
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 9.655rem;
+  /* 154.48px */
+
+  /* Зменшені розміри для мобілки */
+  width: 8rem;
+  height: 3.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.02rem;
+}
+
+.btn_explore:hover {
+  background-color: #5bc5be;
+}
+
+/* Дисклеймер на мобільному просто під текстом */
+.fdic-disclaimer {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.25rem;
+  gap: 0.8rem;
+}
+
+.fdic-disclaimer p {
+  color: #a0a1a8;
+  font-weight: 500;
+  font-size: 0.5rem;
+  line-height: 1.2;
+}
+
+/* -------- Media Queries -------- */
+@media screen and (min-width: 481px) {
+}
+
+@media screen and (min-width: 769px) {
+}
+
+@media screen and (min-width: 1025px) {
+  .desktop-only {
+    display: inline;
+  }
+
+  /* Хедер починається від самого краю екрана */
+  .main-header {
+    top: 0;
+  }
+
+  /* Прибираємо фіксовану висоту і дозволяємо елементам позиціонуватися вільно */
+  .navbar {
+    height: auto;
+  }
+
+  /* Вимикаємо вирівнювання по центру, тепер кожен елемент сам за себе */
+  .navbar nav {
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .nav-actions {
+    gap: 0;
+    /* Бургер зникає, тому відступ контейнеру більше не потрібен */
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .btn_login {
+    display: flex;
+    margin-top: 2.896rem;
+    /* 46.34px */
+    background-color: var(--btn-login-bg);
+    color: var(--btn-login-text);
+    border: none;
+    width: 11.938rem;
+    border-radius: 8.448rem;
+    /* 135.17px */
+    height: 2.955rem;
+    /* 47.28px */
+    padding: 0 2rem;
+    /* 32px */
+    font-family: var(--main-font);
+    font-weight: 600;
+    /* Розмір тексту кнопки: min 10px, ідеально ~0.87vw, max 12.52px */
+    font-size: clamp(0.625rem, 0.87vw, 0.7825rem);
+    line-height: 1rem;
+    /* 16px */
+    letter-spacing: 0.084rem;
+    /* 1.35px */
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .login-text {
+    display: inline;
+  }
+
+  /* 5. Логотип опускаємо нижче */
+  .logo {
+    margin-top: 10.875rem;
+  }
+
+  /* 6. Навбар опускаємо на той самий рівень, що й логотип */
+  .main-menu {
+    position: absolute;
+    top: 10.875rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    background-color: transparent;
+    gap: 2.8125rem;
+  }
+
+  .main-menu a {
+    font-size: 0.903rem;
+    /* 14.45px */
+    letter-spacing: 0.0135rem;
+    /* 0.22px */
+  }
+
+  .main-header .content-wrap {
     max-width: 100%;
-    display: block;
+    padding: 0 3.151rem;
+    /* 50.41px */
+  }
+
+  /* маленькі розміри для крапочок */
+  .main-menu a.has-dropdown::after {
+    right: -0.8rem;
+    width: 0.361rem;
+    /* 5.78px */
+    height: 0.361rem;
+    /* 5.78px */
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .hero-section {
+    height: var(--content-height);
+    min-height: auto;
+    padding: 0;
+  }
+
+  .hero-title {
+    font-size: 3.737rem;
+    /* 59.79px */
+    line-height: 4.634rem;
+    /* 74.15px */
+    letter-spacing: 0.077rem;
+    /* 1.23586px */
+    margin-bottom: 1.448rem;
+    /* 23.17px відступу до кнопки */
+    max-width: 39.586rem;
+    /* Ширина блоку тексту рівно 633.38px */
+  }
+
+  .btn_explore {
+    width: 9.991rem;
+    /* 159.86px */
+    height: 5.02rem;
+    /* 80.31px */
+    font-size: 0.841rem;
+    /* 13.45px */
+    letter-spacing: 0.024rem;
+    /* 0.39px */
+  }
+
+  .fdic-disclaimer {
+    left: 3.15rem;
+    /* 50.41px */
+    bottom: 3.38rem;
+    /* 54.06px */
+  }
+
+  .fdic-disclaimer p {
+    font-size: 0.604rem;
+    /* 9.66px */
+    line-height: 0.724rem;
+    /* 11.59px */
+    letter-spacing: 0.012rem;
+    /* 0.19px */
+  }
+}
+
+@media screen and (min-width: 1201px) {
 }
