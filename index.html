@@ -70,6 +70,36 @@
       </section>
     </main>
 
+    <div id="loginModal" class="modal-wrap d-none">
+      <div class="modal">
+        <div id="closeModal" class="close-modal">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+
+        <h2 class="modal-title">Log in</h2>
+
+        <form action="#" class="modal-form d-flex">
+          <div class="input-group d-flex">
+            <label for="username">Username</label>
+            <input id="username" type="text" required autocomplete="username" />
+          </div>
+
+          <div class="input-group d-flex">
+            <label for="password">Password</label>
+            <input
+              id="password"
+              type="password"
+              required
+              autocomplete="current-password"
+            />
+          </div>
+
+          <button type="submit" class="btn btn_explore submit-btn">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
     <script src="assets/js/script.js"></script>
   </body>
 </html>
