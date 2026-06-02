@@ -1,4 +1,3 @@
-/* script.js */
 document.addEventListener('DOMContentLoaded', () => {
     const iconBlock = document.getElementById('iconBlock');
     const mainMenu = document.getElementById('mainMenu');
@@ -19,6 +18,51 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = 'hidden';
             } else {
                 document.body.style.overflow = '';
+            }
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Елементи
+    const loginBtn = document.getElementById('loginBtn');
+    const modalWrap = document.getElementById('loginModal');
+    const closeModal = document.getElementById('closeModal');
+
+    // Функція відкриття
+    const openModal = () => {
+        modalWrap.classList.remove('d-none');
+        document.body.style.overflow = 'hidden'; // Забираємо скрол сторінки
+    };
+
+    // Функція закриття
+    const hideModal = () => {
+        modalWrap.classList.add('d-none');
+        document.body.style.overflow = ''; // Повертаємо скрол
+    };
+
+    // Слухачі подій
+    if (loginBtn && modalWrap && closeModal) {
+        // Клік по кнопці "Login"
+        loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+
+        // Клік по хрестику
+        closeModal.addEventListener('click', hideModal);
+
+        // Клік по темному фону (повз форму)
+        modalWrap.addEventListener('click', (e) => {
+            if (e.target === modalWrap) {
+                hideModal();
+            }
+        });
+
+        // Закриття клавішею Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modalWrap.classList.contains('d-none')) {
+                hideModal();
             }
         });
     }
