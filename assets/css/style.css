@@ -2,10 +2,11 @@
    0. IMPORTS & CONFIG
    ========================================================================== */
 @import url("_variables.css");
+@import url("modal.css");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 /* ==========================================================================
-   1. RESET & BASE STYLES (Діє на всі екрани)
+   1. RESET & BASE STYLES
    ========================================================================== */
 * {
   margin: 0;
@@ -21,16 +22,12 @@ body {
   background-color: var(--main-bg-color);
   color: var(--light-color);
 
-
   &::-webkit-scrollbar {
-        display: none;
-    }
+    display: none;
+  }
 
-    /* Hide scrollbar for Firefox */
-    scrollbar-width: none;
-
-    /* Hide scrollbar for Legacy IE and Edge */
-    -ms-overflow-style: none; 
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 img {
@@ -47,12 +44,23 @@ ul {
 }
 
 /* ==========================================================================
-   2. UTILITY CLASSES (Утиліти та допоміжні класи)
+   2. UTILITY CLASSES
    ========================================================================== */
-.d-none { display: none !important; }
-.d-flex { display: flex; }
-.uppercase { text-transform: uppercase; }
-.desktop-only { display: none; }
+.d-none {
+  display: none !important;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.desktop-only {
+  display: none;
+}
 
 .item-center {
   justify-content: center;
@@ -67,11 +75,11 @@ ul {
   max-width: var(--content-width);
   width: 100%;
   margin: 0 auto;
-  padding: 0 1.25rem; /* 20px */
+  padding: 0 1.25rem;
 }
 
 /* ==========================================================================
-   3. MOBILE / BASE STYLES (Компоненти за замовчуванням)
+   3. MOBILE STYLES
    ========================================================================== */
 
 /* --- Header & Navigation --- */
@@ -117,8 +125,8 @@ ul {
   color: var(--nav-link-color);
   font-weight: 500;
   font-size: 2rem;
-  line-height: 1.1875rem; /* 19px */
-  letter-spacing: 0.0135rem; /* 0.22px */
+  line-height: 1.1875rem;
+  letter-spacing: 0.0135rem;
 }
 
 .main-menu a.has-dropdown {
@@ -135,7 +143,7 @@ ul {
   transform: translateY(-50%);
   width: 0.5rem;
   height: 0.5rem;
-  background-color: rgba(31, 198, 187, 0.64); /* #1FC6BB 64% */
+  background-color: rgba(31, 198, 187, 0.64);
   border-radius: 50%;
 }
 
@@ -144,7 +152,7 @@ ul {
 }
 
 .menu-icon {
-  font-size: 1.5rem; /* 24px */
+  font-size: 1.5rem;
   cursor: pointer;
   z-index: 20;
   color: var(--light-color);
@@ -167,8 +175,13 @@ ul {
   cursor: pointer;
 }
 
-.btn_login:hover { opacity: 0.85; }
-.login-text { display: none; }
+.btn_login:hover {
+  opacity: 0.85;
+}
+
+.login-text {
+  display: none;
+}
 
 /* --- Hero Section --- */
 .hero-section {
@@ -215,14 +228,16 @@ ul {
   align-items: center;
   text-transform: uppercase;
   font-weight: 600;
-  border-radius: 9.655rem; /* 154.48px */
+  border-radius: 9.655rem;
   width: 8rem;
   height: 3.5rem;
   font-size: 0.75rem;
   letter-spacing: 0.02rem;
 }
 
-.btn_explore:hover { background-color: #5bc5be; }
+.btn_explore:hover {
+  background-color: #5bc5be;
+}
 
 .fdic-disclaimer {
   position: absolute;
@@ -241,12 +256,12 @@ ul {
 /* --- Features Section --- */
 .features-section {
   background-color: #1C1C1E;
-  padding: 48px 20px;       /* Акуратні відступи для мобільних екранів */
+  padding: 48px 20px;
   position: relative;
 }
 
 .features-phone-bg {
-  display: none;            /* Сховано на мобільних за замовчуванням */
+  display: none;
 }
 
 .features-header {
@@ -276,21 +291,21 @@ ul {
 .features-columns-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 32px;                /* Однаковий фіксований відступ між лівою та правою колонками */
+  gap: 32px;
 }
 
 .features-col {
   display: flex;
   flex-direction: column;
-  gap: 32px;                /* Консистентний відступ між картками переваг на мобілці */
+  gap: 32px;
   width: 100%;
 }
 
 .feature-item {
   display: flex;
   flex-direction: column;
-  align-items: center;      /* Магія: центруємо іконку по горизонталі */
-  text-align: center;       /* Центруємо заголовок та опис */
+  align-items: center;
+  text-align: center;
   gap: 12px;
 }
 
@@ -317,26 +332,24 @@ ul {
 /* --- Partners Ribbon --- */
 .partners-logos {
   display: flex;
-  flex-wrap: nowrap;          /* Забороняємо перенос на новий рядок */
-  justify-content: flex-start; /* Починаємо з лівого краю, щоб зручно скролилось */
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   align-items: center;
-  gap: 40px;                  /* Гарний відступ між брендами */
+  gap: 40px;
   padding: 40px 0px;
-  
-  /* Дозволяємо гортати пальцем на мобілці */
-  overflow-x: auto;           
-  -webkit-overflow-scrolling: touch; 
-  
-  /* Ховаємо дефолтний потворний скролбар, щоб усе виглядало чисто */
+  margin-left: -20px;
+  margin-right: -20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 
 .partner-logo {
-  flex-shrink: 0;             /* КРИТИЧНО: забороняє флексу стискати логотипи! */
+  flex-shrink: 0;
 }
 
 .partner-logo img {
-  height: 22px;               /* Трохи збільшимо для читаємості */
+  height: 22px;
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
@@ -345,110 +358,110 @@ ul {
   opacity: 1;
 }
 
-/* --- Login Modal --- */
-.modal-wrap {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100dvh;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(4px);
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.25rem;
-}
-
-.modal-wrap:not(.d-none) {
-  display: flex;
-}
-
-.modal {
+/* --- Cards Layout Baseline --- */
+.cards-layout-container {
   position: relative;
-  background-color: #111111;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
-  padding: 3rem 2.5rem;
+  max-width: 1440px;
   width: 100%;
-  max-width: 25rem; /* 400px */
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
-.close-modal {
-  position: absolute;
-  top: 1rem;
-  right: 1.25rem;
-  font-size: 1.5rem;
-  color: var(--nav-link-color);
-  cursor: pointer;
+.dark-card-section {
+  display: none;
 }
 
-.close-modal:hover { color: var(--light-color); }
-.modal-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
+.white-card-section {
+  width: 100%;
+  height: auto;
+  background-color: #FFFFFF;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.white-card-section .cards-text-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0;
   text-align: center;
 }
 
-.modal-form { flex-direction: column; gap: 1.5rem; }
-.input-group { flex-direction: column; gap: 0.5rem; }
-.input-group label { font-size: 0.875rem; color: var(--nav-link-color); }
-
-.input-group input {
-  width: 100%;
-  height: 3rem;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 0.5rem;
-  color: var(--light-color);
-  padding: 0 1rem;
-  font-family: var(--main-font);
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.3s ease;
+.white-card-section h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 34px;
+  color: #1C1C1E;
+  margin: 0;
 }
 
-.input-group input:focus { border-color: #6fdbd4; }
-.submit-btn { width: 100%; height: 3.5rem; margin-top: 1rem; border: none; cursor: pointer; }
+.white-card-section .cyan-text {
+  color: #00D2C4;
+}
 
+.card-white {
+  position: relative;
+  width: 100%;
+  max-width: 270px;
+  height: 330px;
+  background: url("../images/lightcard.png") no-repeat center / contain;
+  transform: rotate(-8deg);
+  margin: 20px auto 0 auto;
+  pointer-events: none;
+}
 
 /* ==========================================================================
-   4. RESPONSIVE MEDIA QUERIES (Проміжкові брейкпоінти)
+   4. RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media screen and (min-width: 481px) {}
+
 @media screen and (min-width: 769px) {}
 
-
 /* ==========================================================================
-   5. DESKTOP STYLES (Великі екрани від 1025px)
+   5. DESKTOP STYLES (min-width: 1025px)
    ========================================================================== */
 @media screen and (min-width: 1025px) {
-  
-  .desktop-only { display: inline; }
+
+  .desktop-only {
+    display: inline;
+  }
 
   /* --- Desktop Header --- */
-  .main-header { top: 0; }
-  .navbar { height: auto; }
-  
+  .main-header {
+    top: 0;
+  }
+
+  .navbar {
+    height: auto;
+  }
+
   .navbar nav {
     align-items: flex-start;
     position: relative;
   }
 
-  .nav-actions { gap: 0; }
-  .menu-icon { display: none; }
+  .nav-actions {
+    gap: 0;
+  }
+
+  .menu-icon {
+    display: none;
+  }
 
   .btn_login {
     display: flex;
-    margin-top: 2.896rem; /* 46.34px */
+    margin-top: 2.896rem;
     background-color: var(--btn-login-bg);
     color: var(--btn-login-text);
     border: none;
     width: 11.938rem;
-    border-radius: 8.448rem; /* 135.17px */
-    height: 2.955rem; /* 47.28px */
+    border-radius: 8.448rem;
+    height: 2.955rem;
     padding: 0 2rem;
     font-family: var(--main-font);
     font-weight: 600;
@@ -461,8 +474,13 @@ ul {
     gap: 0.5rem;
   }
 
-  .login-text { display: inline; }
-  .logo { margin-top: 10.875rem; }
+  .login-text {
+    display: inline;
+  }
+
+  .logo {
+    margin-top: 10.875rem;
+  }
 
   .main-menu {
     position: absolute;
@@ -477,18 +495,18 @@ ul {
   }
 
   .main-menu a {
-    font-size: 0.903rem; /* 14.45px */
+    font-size: 0.903rem;
     letter-spacing: 0.0135rem;
   }
 
   .main-header .content-wrap {
-    padding: 0 3.151rem; /* 50.41px */
+    padding: 0 3.151rem;
     max-width: 100%;
   }
 
   .main-menu a.has-dropdown::after {
     right: -0.8rem;
-    width: 0.361rem; /* 5.78px */
+    width: 0.361rem;
     height: 0.361rem;
   }
 
@@ -501,46 +519,43 @@ ul {
 
   .hero-title {
     margin-top: 148.39px;
-    font-size: 3.737rem; /* 59.79px */
-    line-height: 4.634rem; /* 74.15px */
+    font-size: 3.737rem;
+    line-height: 4.634rem;
     letter-spacing: 0.077rem;
     margin-bottom: 1.448rem;
-    max-width: 39.586rem; /* 633.38px */
+    max-width: 39.586rem;
   }
 
   .btn_explore {
-    width: 9.991rem; /* 159.86px */
-    height: 5.02rem; /* 80.31px */
+    width: 9.991rem;
+    height: 5.02rem;
     font-size: 0.841rem;
     letter-spacing: 0.024rem;
   }
 
   .fdic-disclaimer {
-    left: 3.15rem; /* 50.41px */
-    bottom: 3.38rem; /* 54.06px */
+    left: 3.15rem;
+    bottom: 3.38rem;
   }
 
   .fdic-disclaimer p {
-    font-size: 0.604rem; /* 9.66px */
+    font-size: 0.604rem;
     line-height: 0.724rem;
     letter-spacing: 0.012rem;
   }
 
   /* --- Desktop Features Section --- */
-  /* ==========================================================================
-     ОНОВЛЕНИЙ FEATURES SECTION (Звуження та обрізка телефону)
-     ========================================================================== */
   .features-section {
     width: 100dvw;
     margin: 0 auto;
-    height: 1277.58px;          /* Точна висота секції з Figma */
-    padding-top: 120.89px;      /* Точний верхній відступ */
+    height: 1277.58px;
+    padding-top: 120.89px;
     padding-left: 100.8px;
-    padding-right: 100.81px;    /* Точні відступи з боків */
+    padding-right: 100.81px;
     padding-bottom: 0;
     box-sizing: border-box;
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
   }
 
   .features-phone-bg {
@@ -548,27 +563,27 @@ ul {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 100dvw; 
+    width: 100dvw;
     max-width: 1440px;
-    top: -206.58px;            /* Наплив вгору на Hero */
-    bottom: 41.58px;           /* Зупинка над брендами */
+    top: -206.58px;
+    bottom: 41.58px;
     background-image: url("../images/phone.png");
     background-repeat: no-repeat;
-    background-position: center; 
-    background-size: 100% auto;   
-    z-index: 0; 
-    pointer-events: none; 
+    background-position: center;
+    background-size: 100% auto;
+    z-index: 0;
+    pointer-events: none;
   }
 
   .features-section .content-wrap {
-    max-width: 100dvw;      
-    height: 922.28px;          /* Висота контент-зони */
+    max-width: 100dvw;
+    height: 922.28px;
     margin: 0;
     padding: 0;
     position: relative;
     justify-content: center;
     border-bottom: solid 1px rgba(255, 255, 255, 0.2);
-    z-index: 2;                /* Текст поверх телефону */
+    z-index: 2;
   }
 
   .features-header {
@@ -583,13 +598,13 @@ ul {
   .features-columns-wrapper {
     flex-direction: row;
     justify-content: space-between;
-    margin-top: auto;          /* Блоки переваг притискаємо до низу */
-    gap: 0;                    /* Скидаємо мобільний gap */
+    margin-top: auto;
+    gap: 0;
   }
 
   .features-col {
     width: 253.73px;
-    gap: 92.69px;                /* Повертаємо великий проміжок з Figma тільки для десктопу */
+    gap: 92.69px;
   }
 
   .feature-item {
@@ -603,36 +618,31 @@ ul {
     margin-bottom: 8px;
   }
 
-  /* Повертаємо десктопне роздільне вирівнювання по сторонах */
-.left-col .feature-item { 
-    align-items: flex-start; 
-    text-align: left; 
+  .left-col .feature-item {
+    align-items: flex-start;
+    text-align: left;
   }
 
-  /* Права колонка: іконка і текст праворуч */
-  .right-col .feature-item { 
-    align-items: flex-end; 
-    text-align: right; 
+  .right-col .feature-item {
+    align-items: flex-end;
+    text-align: right;
   }
 
-  /* ==========================================================================
-     ПАРТНЕРСЬКИЙ БЛОК СТРОГО ЗА FIGMA (1238px)
-     ========================================================================== */
+  /* --- Desktop Partners Ribbon --- */
   .partners-logos {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;               /* Ширина на весь екран, як Hug(1440px) */
-    height: 231.72px;          /* Висота строго за Figma */
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 231.72px;
     box-sizing: border-box;
-    
-    /* Точні падінги з Figma: 92px верт., 100px з боків */
     padding: 92.69px 0px;
     margin-top: 0;
-    
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Розганяє логотипи: Yahoo зліва, Forbes — справа */
+    justify-content: space-between;
     z-index: 3;
   }
 
@@ -644,106 +654,69 @@ ul {
 
   .partner-logo img {
     height: auto;
-    max-height: 46px;          /* Трохи зменшуємо самі логотипи для компактності */
+    max-height: 46px;
     object-fit: contain;
+  }
+
+  /* --- Desktop Cards Layout --- */
+  .cards-layout-container {
+    display: block; 
+    height: 100%;
+  }
+
+  .dark-card-section {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 707.48px;
+    background-color: var(--main-bg-color);
+  }
+
+  .card-black {
+    position: absolute;
+    width: 433.26px;
+    height: 532.96px;
+    left: calc(50% - 433.26px/2 + 323.05px);
+    top: calc(50% - 532.96px/2 + 42.6px);
+    background: url("../images/darkcard.png") no-repeat center / contain;
+    transform: rotate(20deg);
+    pointer-events: none;
+  }
+
+  .white-card-section {
+    position: relative;
+    width: 100%;
+    height: 707.97px;
+    padding: 123.58px 100.8px;   
+  }
+
+  .card-white {
+    position: absolute;
+    width: 433.42px;
+    height: 533.41px;
+    left: calc(50% - 433.42px/2 - 347.89px);
+    top: calc(50% - 533.41px/2 - 5.25px);
+    background: url("../images/lightcard.png") no-repeat center / contain;
+    transform: rotate(-20deg);
+    margin: 0;
+  }
+
+  .white-card-section .cards-text-wrap {
+    width: 489.48px; 
+    margin-top: 95.19px;
+    margin-left: auto; 
+    margin-right: 153.94px;
+    text-align: left;
+  }
+
+  .white-card-section h2 {
+    font-weight: 400;
+    font-size: 38.62px;
+    line-height: 46.34px;
   }
 }
 
 /* ==========================================================================
-   6. LARGE SCREENS & EXTRA ULTRA-WIDE (Від 1201px і більше)
+   6. LARGE SCREENS & EXTRA ULTRA-WIDE
    ========================================================================== */
 @media screen and (min-width: 1201px) {}
-
-/* -------- Login Modal -------- */
-.modal-wrap {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100dvh;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(4px);
-  z-index: 9999;
-
-  /* Коли забираємо d-none, додаємо flex для центрування */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.25rem;
-}
-
-/* Перевизначення для d-none, щоб flex спрацював при відкритті */
-.modal-wrap:not(.d-none) {
-  display: flex;
-}
-
-.modal {
-  position: relative;
-  background-color: #111111; /* Трохи світліше за чорний фон сайту */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
-  padding: 3rem 2.5rem;
-  width: 100%;
-  max-width: 25rem; /* 400px */
-}
-
-.close-modal {
-  position: absolute;
-  top: 1rem;
-  right: 1.25rem;
-  font-size: 1.5rem;
-  color: var(--nav-link-color);
-  cursor: pointer;
-}
-
-.close-modal:hover {
-  color: var(--light-color);
-}
-
-.modal-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.modal-form {
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.input-group {
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.input-group label {
-  font-size: 0.875rem;
-  color: var(--nav-link-color);
-}
-
-.input-group input {
-  width: 100%;
-  height: 3rem;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 0.5rem;
-  color: var(--light-color);
-  padding: 0 1rem;
-  font-family: var(--main-font);
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.input-group input:focus {
-  border-color: #6fdbd4;
-}
-
-.submit-btn {
-  width: 100%;
-  height: 3.5rem;
-  margin-top: 1rem;
-  border: none;
-  cursor: pointer;
-}

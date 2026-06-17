@@ -1,0 +1,94 @@
+/* ==========================================================================
+   LOGIN MODAL STYLES
+   ========================================================================== */
+.modal-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem;
+}
+
+.modal-wrap:not(.d-none) {
+  display: flex;
+}
+
+.modal {
+  position: relative;
+  background-color: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 25rem;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-size: 1.5rem;
+  color: var(--nav-link-color);
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: var(--light-color);
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-size: 0.875rem;
+  color: var(--nav-link-color);
+}
+
+.input-group input {
+  width: 100%;
+  height: 3rem;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: var(--light-color);
+  padding: 0 1rem;
+  font-family: var(--main-font);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #6fdbd4;
+}
+
+.submit-btn {
+  width: 100%;
+  height: 3.5rem;
+  margin-top: 1rem;
+  border: none;
+  cursor: pointer;
+}
