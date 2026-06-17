@@ -1,105 +1,159 @@
 <!doctype html>
 <html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sable</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
 
-  <body>
-    <header class="main-header">
-      <div class="navbar content-wrap d-flex">
-        <nav class="vertical-center d-flex">
-          <div class="logo d-flex">
-            <img src="assets/images/logo.svg" alt="Sable main logo" />
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sable</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
 
-          <ul id="mainMenu" class="main-menu d-flex">
-            <li><a href="#" class="uppercase has-dropdown">Credit</a></li>
-            <li><a href="#" class="uppercase">Debit</a></li>
-            <li><a href="#" class="uppercase">App</a></li>
-            <li><a href="#" class="uppercase has-dropdown">Learn</a></li>
-          </ul>
+<body>
+  <header class="main-header">
+    <div class="navbar content-wrap d-flex">
+      <nav class="vertical-center d-flex">
+        <div class="logo d-flex">
+          <img src="assets/images/logo.svg" alt="Sable main logo" />
+        </div>
 
-          <div class="nav-actions d-flex vertical-center">
-            <div id="iconBlock" class="menu-icon">
-              <div id="iconOpen" class="menu-icon-open">
-                <i class="fa-solid fa-bars"></i>
-              </div>
-              <div id="iconClose" class="menu-icon-close d-none">
-                <i class="fa-solid fa-xmark"></i>
-              </div>
+        <ul id="mainMenu" class="main-menu d-flex">
+          <li><a href="#" class="uppercase has-dropdown">Credit</a></li>
+          <li><a href="#" class="uppercase">Debit</a></li>
+          <li><a href="#" class="uppercase">App</a></li>
+          <li><a href="#" class="uppercase has-dropdown">Learn</a></li>
+        </ul>
+
+        <div class="nav-actions d-flex vertical-center">
+          <div id="iconBlock" class="menu-icon">
+            <div id="iconOpen" class="menu-icon-open">
+              <i class="fa-solid fa-bars"></i>
             </div>
-
-            <button id="loginBtn" class="btn btn_login">
-              <i class="fa-solid fa-arrow-right-to-bracket"></i>
-              <span class="login-text">Login</span>
-            </button>
-          </div>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero-section">
-        <div class="hero-content">
-          <h1 class="hero-title">
-            The fastest, most<br class="desktop-only" />
-            premium path to<br class="desktop-only" />
-            <strong>financial freedom</strong>
-          </h1>
-
-          <a href="#" class="btn btn_explore">Explore</a>
-        </div>
-
-        <div class="fdic-disclaimer d-flex vertical-center">
-          <img src="assets/images/fdic-logo.svg" alt="FDIC" class="fdic-logo" />
-          <p>
-            Banking services provided by Coastal Community Bank, Member<br />
-            FDIC, pursuant to license by Mastercard International Inc.
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <div id="loginModal" class="modal-wrap d-none">
-      <div class="modal">
-        <div id="closeModal" class="close-modal">
-          <i class="fa-solid fa-xmark"></i>
-        </div>
-
-        <h2 class="modal-title">Log in</h2>
-
-        <form action="#" class="modal-form d-flex">
-          <div class="input-group d-flex">
-            <label for="username">Username</label>
-            <input id="username" type="text" required autocomplete="username" />
+            <div id="iconClose" class="menu-icon-close d-none">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
           </div>
 
-          <div class="input-group d-flex">
-            <label for="password">Password</label>
-            <input
-              id="password"
-              type="password"
-              required
-              autocomplete="current-password"
-            />
-          </div>
-
-          <button type="submit" class="btn btn_explore submit-btn">
-            Submit
+          <button id="loginBtn" class="btn btn_login">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            <span class="login-text">Login</span>
           </button>
-        </form>
-      </div>
+        </div>
+      </nav>
     </div>
-    <script src="assets/js/script.js"></script>
-  </body>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          The fastest, most<br class="desktop-only" />
+          premium path to<br class="desktop-only" />
+          <strong>financial freedom</strong>
+        </h1>
+
+        <a href="#" class="btn btn_explore">Explore</a>
+      </div>
+
+      <div class="fdic-disclaimer d-flex vertical-center">
+        <img src="assets/images/fdic-logo.svg" alt="FDIC" class="fdic-logo" />
+        <p>
+          Banking services provided by Coastal Community Bank, Member<br />
+          FDIC, pursuant to license by Mastercard International Inc.
+        </p>
+      </div>
+    </section>
+
+
+
+
+
+    <section class="features-section">
+  <div class="features-phone-bg"></div>
+
+  <div class="content-wrap">
+    
+    <div class="features-header text-center">
+      <p class="features-subtitle uppercase">400,000 Accounts & Counting</p>
+      <h2 class="features-title">
+    No hidden fees. No credit checks.
+    <br class="desktop-only">
+    <span class="features-title-regular">No more barriers to building credit.</span>
+</h2>
+    </div>
+
+    <div class="features-columns-wrapper">
+      
+      <div class="features-col left-col">
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fa-solid fa-credit-card"></i></div>
+          <h3 class="feature-item-title">Get a secured credit card and bank account in 5 minutes.</h3>
+          <p class="feature-item-desc">No credit history, credit check, or minimum deposit required.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fa-solid fa-trophy"></i></div>
+          <h3 class="feature-item-title">The only premium card for building credit.</h3>
+          <p class="feature-item-desc">2% unlimited cash back on your favorite brands, 2X first year cash back match, premium benefits and more!</p>
+        </div>
+      </div>
+
+      <div class="features-col right-col">
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h3 class="feature-item-title">Build your U.S. credit</h3>
+          <p class="feature-item-desc">We believe in forming positive habits. Build your U.S. credit with Sable</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
+          <h3 class="feature-item-title">Bank like a global citizen with Sable.</h3>
+          <p class="feature-item-desc">Start building credit before you even enter the country. Non-U.S. citizens can apply with their passport and visa.</p>
+        </div>
+      </div>
+
+    </div>
+
+    
+
+  </div>
+  <div class="partners-logos">
+      <div class="partner-logo"><img src="assets/images/icons/yahoo.svg" alt="Yahoo Finance"></div>
+      <div class="partner-logo"><img src="assets/images/icons/bloomberg.svg" alt="Bloomberg"></div>
+      <div class="partner-logo"><img src="assets/images/icons/insider.svg" alt="Business Insider"></div>
+      <div class="partner-logo"><img src="assets/images/icons/forbes.svg" alt="Forbes"></div>
+    </div>
+</section>
+  </main>
+
+  <div id="loginModal" class="modal-wrap d-none">
+    <div class="modal">
+      <div id="closeModal" class="close-modal">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+
+      <h2 class="modal-title">Log in</h2>
+
+      <form action="#" class="modal-form d-flex">
+        <div class="input-group d-flex">
+          <label for="username">Username</label>
+          <input id="username" type="text" required autocomplete="username" />
+        </div>
+
+        <div class="input-group d-flex">
+          <label for="password">Password</label>
+          <input id="password" type="password" required autocomplete="current-password" />
+        </div>
+
+        <button type="submit" class="btn btn_explore submit-btn">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+  <script src="assets/js/script.js"></script>
+</body>
+
 </html>
