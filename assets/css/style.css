@@ -14,20 +14,41 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   max-width: 100vw;
+  height: 100%;
   overflow-x: hidden;
+  overflow-y: auto;
+  /* Дозволяємо системний скролл вікна */
+
+  /* ХОВАЄМО СКРОЛЛБАР ДЛЯ HTML */
+  scrollbar-width: none;
+  /* Для Firefox */
+  -ms-overflow-style: none;
+  /* Для старого IE/Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none;
+  /* Для Chrome, Safari, Opera та нових Edge */
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  overflow: visible;
+  /* Боді просто росте вниз і не створює дублів */
   font-family: var(--main-font);
   background-color: var(--main-bg-color);
   color: var(--light-color);
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
+  /* ХОВАЄМО СКРОЛЛБАР ДЛЯ BODY (про всяк випадок) */
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 img {
@@ -340,7 +361,6 @@ ul {
   margin-left: -20px;
   margin-right: -20px;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 
@@ -487,6 +507,7 @@ ul {
     top: 173.83px;
     left: 50%;
     transform: translateX(-50%);
+    right: auto;
     width: auto;
     height: auto;
     flex-direction: row;
@@ -513,7 +534,7 @@ ul {
   /* --- Desktop Hero --- */
   .hero-section {
     height: var(--content-height);
-    min-height: auto;
+    min-height: 100vh;
     padding: 0;
   }
 
@@ -546,7 +567,7 @@ ul {
 
   /* --- Desktop Features Section --- */
   .features-section {
-    width: 100dvw;
+    width: 100%;
     margin: 0 auto;
     height: 1277.58px;
     padding-top: 120.89px;
@@ -563,7 +584,7 @@ ul {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 100dvw;
+    width: 100%;
     max-width: 1440px;
     top: -206.58px;
     bottom: 41.58px;
@@ -572,11 +593,11 @@ ul {
     background-position: center;
     background-size: 100% auto;
     z-index: 0;
-    pointer-events: none;
+    overflow: hidden;
   }
 
   .features-section .content-wrap {
-    max-width: 100dvw;
+    max-width: 100%;
     height: 922.28px;
     margin: 0;
     padding: 0;
@@ -660,8 +681,9 @@ ul {
 
   /* --- Desktop Cards Layout --- */
   .cards-layout-container {
-    display: block; 
+    display: block;
     height: 100%;
+
   }
 
   .dark-card-section {
@@ -670,6 +692,7 @@ ul {
     width: 100%;
     height: 707.48px;
     background-color: var(--main-bg-color);
+    overflow: hidden;
   }
 
   .card-black {
@@ -687,7 +710,7 @@ ul {
     position: relative;
     width: 100%;
     height: 707.97px;
-    padding: 123.58px 100.8px;   
+    padding: 123.58px 100.8px;
   }
 
   .card-white {
@@ -702,9 +725,9 @@ ul {
   }
 
   .white-card-section .cards-text-wrap {
-    width: 489.48px; 
+    width: 489.48px;
     margin-top: 95.19px;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: 153.94px;
     text-align: left;
   }
