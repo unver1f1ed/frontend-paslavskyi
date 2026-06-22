@@ -67,3 +67,69 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const tickerContainer = document.querySelector('.compare-ticker');
+  const originalTextElement = document.querySelector('.ticker-text');
+  
+  if (!tickerContainer || !originalTextElement) return;
+
+  if (!originalTextElement.querySelector('.dot:last-child')) {
+    const dot = document.createElement('span');
+    dot.className = 'dot';
+    dot.textContent = ' •';
+    originalTextElement.appendChild(dot);
+  }
+
+  const textTemplateHTML = originalTextElement.outerHTML;
+  let animationId = null;
+
+  function setupTicker() {
+    if (animationId) cancelAnimationFrame(animationId);
+
+    tickerContainer.innerHTML = '';
+
+    const tickerTrack = document.createElement('div');
+    tickerTrack.className = 'ticker-track';
+    tickerContainer.appendChild(tickerTrack);
+
+    tickerTrack.innerHTML = textTemplateHTML;
+    const singleItem = tickerTrack.querySelector('.ticker-text');
+    
+    const originalWidth = singleItem.getBoundingClientRect().width;
+
+    const clonesNeeded = Math.ceil(window.innerWidth / originalWidth) + 2;
+
+    for (let i = 0; i < clonesNeeded; i++) {
+      tickerTrack.insertAdjacentHTML('beforeend', textTemplateHTML);
+    }
+
+    let currentX = 0;
+    const speed = 1.2;
+
+    function animate() {
+      currentX -= speed;
+      
+      if (Math.abs(currentX) >= originalWidth) {
+        currentX += originalWidth; 
+      }
+      
+      tickerTrack.style.transform = `translate3d(${currentX}px, 0, 0)`;
+      animationId = requestAnimationFrame(animate);
+    }
+
+    animationId = requestAnimationFrame(animate);
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(setupTicker);
+  } else {
+    window.addEventListener('load', setupTicker);
+  }
+
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(setupTicker, 200);
+  });
+});

@@ -1,13 +1,7 @@
-/* ==========================================================================
-   0. IMPORTS & CONFIG
-   ========================================================================== */
 @import url("_variables.css");
 @import url("modal.css");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
-/* ==========================================================================
-   1. RESET & BASE STYLES
-   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -55,9 +49,6 @@ ul {
   list-style: none;
 }
 
-/* ==========================================================================
-   2. UTILITY CLASSES
-   ========================================================================== */
 .d-none {
   display: none !important;
 }
@@ -90,11 +81,6 @@ ul {
   padding: 0 1.25rem;
 }
 
-/* ==========================================================================
-   3. MOBILE STYLES
-   ========================================================================== */
-
-/* --- Header & Navigation --- */
 .main-header {
   position: absolute;
   top: 0;
@@ -195,7 +181,6 @@ ul {
   display: none;
 }
 
-/* --- Hero Section --- */
 .hero-section {
   position: relative;
   width: 100%;
@@ -265,7 +250,6 @@ ul {
   line-height: 1.2;
 }
 
-/* --- Features Section --- */
 .features-section {
   background-color: #1C1C1E;
   padding: 48px 20px;
@@ -341,7 +325,6 @@ ul {
   line-height: 1.5;
 }
 
-/* --- Partners Ribbon --- */
 .partners-logos {
   display: flex;
   flex-wrap: nowrap;
@@ -369,7 +352,6 @@ ul {
   opacity: 1;
 }
 
-/* --- Cards Layout Baseline --- */
 .cards-layout-container {
   position: relative;
   max-width: 1440px;
@@ -426,7 +408,6 @@ ul {
   pointer-events: none;
 }
 
-/* --- Rewards Section --- */
 .rewards-section {
   width: 100%;
   background-color: var(--main-bg-color);
@@ -551,23 +532,193 @@ ul {
   border: 2px dashed rgba(0, 0, 0, 0.04);
 }
 
-/* ==========================================================================
-   4. RESPONSIVE MEDIA QUERIES
-   ========================================================================== */
-@media screen and (min-width: 481px) {}
+#compare-sable {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  padding: 60px 0;
+  width: 100%;
+  overflow-x: hidden;
+}
 
-@media screen and (min-width: 769px) {}
+.compare-container {
+  padding: 0 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-/* ==========================================================================
-   5. DESKTOP STYLES (min-width: 1025px)
-   ========================================================================== */
+.compare-ticker {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  overflow: hidden;
+  position: relative;
+  background-color: #000000;
+  margin-bottom: 92.69px;
+  padding: 10px 0;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.ticker-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 46px;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.ticker-text .dot {
+  margin: 0 14px;
+}
+
+.compare-grid-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 15px;
+}
+
+.compare-grid {
+  display: flex;
+  flex-direction: column;
+  min-width: 1024px;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: 210px 392.2px 392.2px;
+  column-gap: 30.89px;
+  align-items: center;
+  min-height: 63.77px;
+  border-bottom: 1px solid #2F2F2F;
+  box-sizing: border-box;
+}
+
+.header-row {
+  border-bottom: none !important;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.price-row,
+.action-row {
+  border-bottom: none;
+}
+
+.grid-cell {
+  padding: 8px 0;
+}
+
+.feature-label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #FFFFFF;
+}
+
+.card-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.card-image-wrapper {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+}
+
+.card-img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.card-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.3;
+  color: #10ACA2FF;
+  margin: 0;
+}
+
+.icon-cell {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.icon-check,
+.icon-lock {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.icon-check {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") no-repeat center/contain;
+}
+
+.icon-lock {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A0A1A8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='11' width='18' height='11' rx='2' ry='2'%3E%3C/rect%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'%3E%3C/path%3E%3C/svg%3E") no-repeat center/contain;
+}
+
+.price-cell {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.2;
+  color: #FFFFFF;
+}
+
+.price-cell .period {
+  font-size: 13px;
+  color: #A0A1A8;
+}
+
+.btn-cell {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6FDBD4;
+  color: #000000;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  height: 47.28px;
+  width: 140px;
+  border-radius: 135.17px;
+  box-sizing: border-box;
+  padding: 15.53px 24.06px 14.75px 22.97px;
+  transition: opacity 0.2s ease;
+}
+
+.btn-cta.btn-wide {
+  width: 198.95px;
+}
+
 @media screen and (min-width: 1025px) {
-
   .desktop-only {
     display: inline;
   }
 
-  /* --- Desktop Header --- */
   .main-header {
     top: 0;
   }
@@ -647,7 +798,6 @@ ul {
     height: 0.361rem;
   }
 
-  /* --- Desktop Hero --- */
   .hero-section {
     height: var(--content-height);
     min-height: 100vh;
@@ -681,7 +831,6 @@ ul {
     letter-spacing: 0.012rem;
   }
 
-  /* --- Desktop Features Section --- */
   .features-section {
     width: 100%;
     margin: 0 auto;
@@ -765,7 +914,6 @@ ul {
     text-align: right;
   }
 
-  /* --- Desktop Partners Ribbon --- */
   .partners-logos {
     position: absolute;
     bottom: 0;
@@ -795,7 +943,6 @@ ul {
     object-fit: contain;
   }
 
-  /* --- Desktop Cards Layout --- */
   .cards-layout-container {
     display: block;
     height: 100%;
@@ -853,7 +1000,6 @@ ul {
     line-height: 46.34px;
   }
 
-  /* --- Desktop Rewards Section --- */
   .rewards-container {
     flex-direction: row;
     margin: 0 auto;
@@ -934,7 +1080,71 @@ ul {
   }
 }
 
-/* ==========================================================================
-   6. LARGE SCREENS & EXTRA ULTRA-WIDE
-   ========================================================================== */
-@media screen and (min-width: 1201px) {}
+@media screen and (min-width: 1201px) {
+  #compare-sable {
+    padding: 100px 0;
+  }
+
+  .compare-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 100.8px;
+    box-sizing: border-box;
+  }
+
+  .compare-ticker {
+    margin-bottom: 60px;
+  }
+
+  .ticker-text {
+    font-size: 84.51px;
+    line-height: 95.16px;
+  }
+
+  .ticker-text .dot {
+    margin: 0 30px;
+  }
+
+  .compare-grid-wrapper {
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+
+  .compare-grid {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .grid-row {
+    grid-template-columns: 1fr 392.2px 392px;
+    column-gap: 30.89px;
+    width: 100%;
+    min-height: 63.77px;
+  }
+
+  .header-row {
+    margin-bottom: 40px;
+  }
+
+  .feature-label {
+    font-size: 16px;
+  }
+
+  .card-image-wrapper {
+    height: 130px;
+    margin-bottom: 16px;
+  }
+
+  .card-title {
+    font-size: 20px;
+    line-height: 1.35;
+  }
+
+  .price-cell {
+    font-size: 42px;
+  }
+
+  .btn-cta:hover {
+    opacity: 0.85;
+  }
+}
