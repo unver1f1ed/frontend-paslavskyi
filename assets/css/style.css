@@ -714,6 +714,186 @@ ul {
   width: 198.95px;
 }
 
+.reviews-section {
+  background-color: #000000;
+  padding: 60px 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.rating-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.rating-score {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 1.2;
+  color: #FFFFFF;
+}
+
+.reviews-slider-container {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 15px;
+}
+
+.reviews-slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+.reviews-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  padding: 0 4px;
+}
+
+.review-card {
+  background: #1C1C1E;
+  border-radius: 14px;
+  padding: 24px;
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.quote-icon svg {
+  width: 30px;
+  height: auto;
+  display: block;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.review-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-line {
+  width: 40px;
+  height: 2px;
+  background-color: #FFFFFF;
+  display: inline-block;
+}
+
+.author-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #FFFFFF;
+}
+
+.cta-banner-section {
+  padding: 40px 16px;
+  background-color: #000000;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cta-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-banner-card {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('../images/lastbg.png') no-repeat center center / cover;
+  border-radius: 16px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.cta-content-block {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.cta-heading-wrap {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.cta-heading-wrap span {
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.cta-heading-wrap .word-join {
+  font-size: 24px;
+}
+
+.cta-heading-wrap .word-over {
+  font-size: 26px;
+}
+
+.cta-heading-wrap .word-number {
+  font-size: 38px;
+  color: #FFFFFF;
+}
+
+.cta-heading-wrap .word-accounts {
+  font-size: 26px;
+}
+
+.cta-description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.cta-apps-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.app-badge img {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
 @media screen and (min-width: 1025px) {
   .desktop-only {
     display: inline;
@@ -1078,6 +1258,119 @@ ul {
   .brand-col.col-right {
     transform: translateY(100px);
   }
+
+  .reviews-section {
+    padding: 100px 0;
+    background-color: #000000;
+  }
+
+  .reviews-section .content-wrap {
+    max-width: 1440px;
+    padding: 0 60px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rating-header {
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .rating-score {
+    font-size: 69.24px;
+    line-height: 77px;
+  }
+
+  .reviews-slider-container {
+    overflow-x: visible;
+    padding-bottom: 0;
+    width: 100%;
+  }
+
+  .reviews-track {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+  }
+
+  .review-card {
+    display: flex;
+    flex-direction: row;
+    gap: 38px;
+    flex: 1 1 45%;
+    max-width: 595.19px;
+    min-height: 386.92px;
+    border-radius: 19.31px;
+    padding: 61.78px;
+    box-sizing: border-box;
+  }
+
+  .quote-icon {
+    flex-shrink: 0;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+
+  .review-text {
+    font-size: 27.03px;
+    line-height: 34px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .review-card:nth-child(2) .review-text {
+    font-size: 26.03px;
+    line-height: 32px;
+  }
+
+  .author-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+  }
+
+  .author-line {
+    width: 61.78px;
+    height: 3.86px;
+    background-color: #FFFFFF;
+    flex-shrink: 0;
+  }
+
+  .author-name {
+    font-size: 16.38px;
+    line-height: 21px;
+    letter-spacing: 0.34px;
+  }
+
+  .review-card:nth-child(2) .author-name {
+    font-size: 15.37px;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1140px) {
+  .reviews-track {
+    gap: 20px;
+  }
+
+  .review-card {
+    padding: 40px;
+    font-size: 22px;
+  }
+
+  .review-text {
+    font-size: 22px;
+  }
 }
 
 @media screen and (min-width: 1201px) {
@@ -1146,5 +1439,77 @@ ul {
 
   .btn-cta:hover {
     opacity: 0.85;
+  }
+
+  .cta-banner-section {
+    margin-top: 154.47px;
+    padding: 0;
+  }
+
+  .cta-banner-section .cta-container {
+    max-width: 1440px;
+    padding-left: 100.80px;
+    padding-right: 100.81px;
+    box-sizing: border-box;
+  }
+
+  .cta-banner-card {
+    width: 100%;
+    max-width: 1238.39px;
+    height: 411.86px;
+    border-radius: 24px;
+    padding: 0 90px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 61px;
+    gap: 0;
+  }
+
+  .cta-content-block {
+    max-width: 650px;
+    gap: 22px;
+  }
+
+  .cta-heading-wrap {
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .cta-heading-wrap .word-join {
+    font-size: 31.62px;
+    line-height: 46.34px;
+  }
+
+  .cta-heading-wrap .word-over {
+    font-size: 35.62px;
+    line-height: 46.34px;
+  }
+
+  .cta-heading-wrap .word-number {
+    font-size: 55.79px;
+    line-height: 74.15px;
+  }
+
+  .cta-heading-wrap .word-accounts {
+    font-size: 36.62px;
+    line-height: 46.34px;
+  }
+
+  .cta-description {
+    max-width: 474.78px;
+    font-size: 17.38px;
+    line-height: 25.03px;
+    letter-spacing: 0.35px;
+  }
+
+  .cta-apps-block {
+    flex-direction: row;
+    gap: 20px;
+
+  }
+
+  .app-badge img {
+    height: 60px;
   }
 }
