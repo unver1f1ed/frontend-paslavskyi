@@ -808,6 +808,92 @@ ul {
   color: #FFFFFF;
 }
 
+.cta-banner-section {
+  padding: 40px 16px;
+  background-color: #000000;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cta-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-banner-card {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('../images/lastbg.png') no-repeat center center / cover;
+  border-radius: 16px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.cta-content-block {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.cta-heading-wrap {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.cta-heading-wrap span {
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.cta-heading-wrap .word-join {
+  font-size: 24px;
+}
+
+.cta-heading-wrap .word-over {
+  font-size: 26px;
+}
+
+.cta-heading-wrap .word-number {
+  font-size: 38px;
+  color: #FFFFFF;
+}
+
+.cta-heading-wrap .word-accounts {
+  font-size: 26px;
+}
+
+.cta-description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.cta-apps-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.app-badge img {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
 @media screen and (min-width: 1025px) {
   .desktop-only {
     display: inline;
@@ -1213,10 +1299,10 @@ ul {
 
   .review-card {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     gap: 38px;
     flex: 1 1 45%;
-    max-width: 595.19px; 
+    max-width: 595.19px;
     min-height: 386.92px;
     border-radius: 19.31px;
     padding: 61.78px;
@@ -1266,7 +1352,7 @@ ul {
     line-height: 21px;
     letter-spacing: 0.34px;
   }
-  
+
   .review-card:nth-child(2) .author-name {
     font-size: 15.37px;
   }
@@ -1276,10 +1362,12 @@ ul {
   .reviews-track {
     gap: 20px;
   }
+
   .review-card {
     padding: 40px;
     font-size: 22px;
   }
+
   .review-text {
     font-size: 22px;
   }
@@ -1351,5 +1439,77 @@ ul {
 
   .btn-cta:hover {
     opacity: 0.85;
+  }
+
+  .cta-banner-section {
+    margin-top: 154.47px;
+    padding: 0;
+  }
+
+  .cta-banner-section .cta-container {
+    max-width: 1440px;
+    padding-left: 100.80px;
+    padding-right: 100.81px;
+    box-sizing: border-box;
+  }
+
+  .cta-banner-card {
+    width: 100%;
+    max-width: 1238.39px;
+    height: 411.86px;
+    border-radius: 24px;
+    padding: 0 90px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 61px;
+    gap: 0;
+  }
+
+  .cta-content-block {
+    max-width: 650px;
+    gap: 22px;
+  }
+
+  .cta-heading-wrap {
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .cta-heading-wrap .word-join {
+    font-size: 31.62px;
+    line-height: 46.34px;
+  }
+
+  .cta-heading-wrap .word-over {
+    font-size: 35.62px;
+    line-height: 46.34px;
+  }
+
+  .cta-heading-wrap .word-number {
+    font-size: 55.79px;
+    line-height: 74.15px;
+  }
+
+  .cta-heading-wrap .word-accounts {
+    font-size: 36.62px;
+    line-height: 46.34px;
+  }
+
+  .cta-description {
+    max-width: 474.78px;
+    font-size: 17.38px;
+    line-height: 25.03px;
+    letter-spacing: 0.35px;
+  }
+
+  .cta-apps-block {
+    flex-direction: row;
+    gap: 20px;
+
+  }
+
+  .app-badge img {
+    height: 60px;
   }
 }
