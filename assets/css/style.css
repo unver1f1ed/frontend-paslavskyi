@@ -14,20 +14,32 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   max-width: 100vw;
+  height: 100%;
   overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  overflow: visible;
   font-family: var(--main-font);
   background-color: var(--main-bg-color);
   color: var(--light-color);
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 img {
@@ -340,7 +352,6 @@ ul {
   margin-left: -20px;
   margin-right: -20px;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 
@@ -415,6 +426,131 @@ ul {
   pointer-events: none;
 }
 
+/* --- Rewards Section --- */
+.rewards-section {
+  width: 100%;
+  background-color: var(--main-bg-color);
+}
+
+.rewards-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.rewards-info-side {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3rem 1.25rem;
+  background-color: #1C1C1E;
+  display: flex;
+  justify-content: center;
+}
+
+.rewards-info-wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.reward-item {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(196, 196, 196, 0.12);
+  color: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.reward-item.active {
+  border-top: 1px solid rgba(196, 196, 196, 0.390108);
+  color: rgba(255, 255, 255, 0.975269);
+}
+
+.reward-item-title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  color: inherit;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.reward-item-desc {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  letter-spacing: 0.02rem;
+  color: inherit;
+  margin-top: 0;
+}
+
+.rewards-visual-side {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #F2F2F7;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 420px;
+}
+
+.brands-columns-container {
+  display: flex;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 450px;
+  padding: 0 1.25rem;
+}
+
+.brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 50%;
+}
+
+.brand-col.col-left {
+  transform: translateY(40px);
+}
+
+.brand-col.col-right {
+  transform: translateY(100px);
+}
+
+.brand-card {
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  border-radius: 1.5rem;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.brand-card img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+}
+
+.brand-card.empty-card {
+  background-color: transparent;
+  box-shadow: none;
+  border: 2px dashed rgba(0, 0, 0, 0.04);
+}
+
 /* ==========================================================================
    4. RESPONSIVE MEDIA QUERIES
    ========================================================================== */
@@ -487,6 +623,7 @@ ul {
     top: 173.83px;
     left: 50%;
     transform: translateX(-50%);
+    right: auto;
     width: auto;
     height: auto;
     flex-direction: row;
@@ -513,7 +650,7 @@ ul {
   /* --- Desktop Hero --- */
   .hero-section {
     height: var(--content-height);
-    min-height: auto;
+    min-height: 100vh;
     padding: 0;
   }
 
@@ -546,7 +683,7 @@ ul {
 
   /* --- Desktop Features Section --- */
   .features-section {
-    width: 100dvw;
+    width: 100%;
     margin: 0 auto;
     height: 1277.58px;
     padding-top: 120.89px;
@@ -563,7 +700,7 @@ ul {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 100dvw;
+    width: 100%;
     max-width: 1440px;
     top: -206.58px;
     bottom: 41.58px;
@@ -572,11 +709,11 @@ ul {
     background-position: center;
     background-size: 100% auto;
     z-index: 0;
-    pointer-events: none;
+    overflow: hidden;
   }
 
   .features-section .content-wrap {
-    max-width: 100dvw;
+    max-width: 100%;
     height: 922.28px;
     margin: 0;
     padding: 0;
@@ -660,7 +797,7 @@ ul {
 
   /* --- Desktop Cards Layout --- */
   .cards-layout-container {
-    display: block; 
+    display: block;
     height: 100%;
   }
 
@@ -670,6 +807,7 @@ ul {
     width: 100%;
     height: 707.48px;
     background-color: var(--main-bg-color);
+    overflow: hidden;
   }
 
   .card-black {
@@ -687,7 +825,7 @@ ul {
     position: relative;
     width: 100%;
     height: 707.97px;
-    padding: 123.58px 100.8px;   
+    padding: 123.58px 100.8px;
   }
 
   .card-white {
@@ -702,9 +840,9 @@ ul {
   }
 
   .white-card-section .cards-text-wrap {
-    width: 489.48px; 
+    width: 489.48px;
     margin-top: 95.19px;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: 153.94px;
     text-align: left;
   }
@@ -713,6 +851,86 @@ ul {
     font-weight: 400;
     font-size: 38.62px;
     line-height: 46.34px;
+  }
+
+  /* --- Desktop Rewards Section --- */
+  .rewards-container {
+    flex-direction: row;
+    margin: 0 auto;
+  }
+
+  .rewards-info-side {
+    width: 50%;
+    height: 810px;
+    padding: 98.03px 100.8px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rewards-info-wrapper {
+    max-width: 518.41px;
+  }
+
+  .reward-item {
+    width: 100%;
+    padding: 47.3438px 0px 1.5625px 0px;
+    margin-bottom: 38.6px;
+  }
+
+  .reward-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .reward-item-title {
+    font-size: 30.8966px;
+    line-height: 37px;
+    margin-bottom: 12.05px;
+  }
+
+  .reward-item-desc {
+    font-size: 17.3793px;
+    line-height: 25px;
+    letter-spacing: 0.347586px;
+  }
+
+  .reward-item:not(.active) .reward-item-title {
+    font-size: 28.8966px;
+  }
+
+  .reward-item:not(.active) .reward-item-desc {
+    font-size: 16.3793px;
+  }
+
+  .rewards-visual-side {
+    width: 50%;
+    height: 810px;
+    padding: 0;
+  }
+
+  .brands-columns-container {
+    gap: 54.06px;
+    max-width: none;
+    width: auto;
+  }
+
+  .brand-col {
+    width: 216px;
+    gap: 54.06px;
+  }
+
+  .brand-card {
+    width: 216px;
+    height: 216px;
+    border-radius: 36.69px;
+    flex-shrink: 0;
+  }
+
+  .brand-col.col-left {
+    transform: translateY(50px);
+  }
+
+  .brand-col.col-right {
+    transform: translateY(100px);
   }
 }
 
