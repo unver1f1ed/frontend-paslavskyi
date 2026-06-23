@@ -4,6 +4,19 @@
   --main-bg-color: #000000;
   --light-color: #ffffff;
   --nav-link-color: rgba(255, 255, 255, 0.64);
+  --accent-color: #6FDBD4;
+  --accent-hover: #5bc5be;
+  --accent-secondary: #00D2C4;
+  --dark-bg: #1C1C1E;
+  --white: #FFFFFF;
+  --light-gray: #F2F2F7;
+  --text-secondary: #A1A1AA;
+  --text-muted: #A0A1A8;
+  --text-muted-light: rgba(255, 255, 255, 0.3);
+  --border-light: rgba(196, 196, 196, 0.12);
+  --border-active: rgba(196, 196, 196, 0.390108);
+  --border-dark: #2F2F2F;
+  --text-legal: #73757B;
 
   --btn-login-bg: #ffffff;
   --btn-login-text: #000000;
